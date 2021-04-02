@@ -1,0 +1,24 @@
+.checkout-div{
+    margin-top: 20px;
+    background-color: rgb(18, 108, 131);
+    height: 250px;
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+.checkout-heading{
+    text-align: left;
+    margin-left: 500px;
+    margin-top: 50px;
+    color: rgb(65, 5, 114);
+}
+.checkout-btn{
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 80px;
+
+}

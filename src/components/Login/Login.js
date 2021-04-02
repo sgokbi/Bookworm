@@ -17,35 +17,28 @@ const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    const { from } = location.state || { from: { pathname: "/" } };
 
     const provider = new firebase.auth.GoogleAuthProvider();
+
     const handleGoogleSignIn = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                var credential = result.credential;
-                var token = credential.accessToken;
-                var user = result.user;
+                const user = result.user;
                 console.log(user)
                 setUser(user);
                 setLoggedInUser(user)
                 history.replace(from);
             }).catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                var email = error.email;
-
+                const email = error.email;
             });
     }
 
-
     return (
         <div className="login-div">
-            <h3 className="mb-4">Name: {user.displayName}</h3>
             <button className="google-btn" onClick={handleGoogleSignIn}>
                 <img className="google-img" src={google} alt="" /> Sign In With Google</button>
-
         </div>
     );
 };

@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Header from './components/Header/Header';
 import Home from "./components/Home/Home";
@@ -12,18 +11,16 @@ import AddBooks from './components/AddBook/AddBook';
 import { createContext, useState } from 'react';
 import Order from './components/Order/Order';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
+import CheckOut from './components/CheckOut/CheckOut';
 
 export const UserContext = createContext();
 
 function App() {
-
   const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
-
     < UserContext.Provider value={[loggedInUser, setLoggedInUser]} >
-      <h3>Email: {loggedInUser.email}</h3>
       <Router>
-
         <Header />
         <Switch>
           <Route exact path="/">
@@ -32,20 +29,19 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/orders">
-
-          </Route>
+          <PrivetRoute path="/books/:id">
+            <CheckOut />
+          </PrivetRoute>
           <PrivetRoute path="/admin">
             <AddBooks />
           </PrivetRoute>
-          <PrivetRoute path="/order">
+          <PrivetRoute path="/orders">
             <Order />
           </PrivetRoute>
           <Route path="/login">
             <Login />
           </Route>
         </Switch>
-
       </Router>
     </UserContext.Provider >
   );

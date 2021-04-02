@@ -2,20 +2,19 @@
 .header {
     text-align: center;
 }
-
 .header nav{
     line-height: 40px;
     font-size: 20px;
-    background-color: lightgray;
+    background-color:  rgb(104, 89, 236);
 }
-nav a{
-    background-color: lightgray;
+   nav a{
+    background-color: rgb(104, 89, 236);
     text-decoration: none;
     margin-right: 20px;
-    padding: 5px;
-}
+    padding: 4px;
+    color: white;
+} 
 .logo{
     padding-right: 500px;
     font-size: 30px; 
-
 }

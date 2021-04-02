@@ -1,11 +1,17 @@
 .addBooks-div{
     margin-top: 50px;
-    text-align: center;
+    text-align: left;
+    margin-left:500px;
+    height:400px;
+    width: 300px;
+    background: lightgray;
+    padding: 40px;
+    border-radius: 10px;
 }
 .input-space{
-    margin: 5px;
+   margin-bottom: 8px;
 }
 h6{
     color: mediumblue;
-    
+
 }

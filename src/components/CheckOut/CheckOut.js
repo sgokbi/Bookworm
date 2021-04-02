@@ -8,8 +8,7 @@ const CheckOut = () => {
     const [checkout, setCheckout] = useState([]);
 
     useEffect(() => {
-        const url = ` http://localhost:5000/books/${id}`;
-        // const url = ` https://young-citadel-38075.herokuapp.com/books/${id}`;
+        const url = ` https://young-citadel-38075.herokuapp.com/books/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

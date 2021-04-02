@@ -15,7 +15,7 @@ const AddBook = () => {
             price: data.price
         };
 
-        const url = `http://localhost:5000/addBook`
+        const url = `https://young-citadel-38075.herokuapp.com/addBook`;
         fetch(url, {
             method: 'POST',
             headers: {

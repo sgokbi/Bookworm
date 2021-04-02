@@ -7,7 +7,7 @@ const Books = (props) => {
     const history = useHistory();
 
     const handleBookNow = id => {
-        const url = `books/${id}`;
+        const url = `/books/${id}`;
         history.push(url);
     }
 

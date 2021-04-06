@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 import "./AddBook.css";
 
 const AddBook = () => {
@@ -14,7 +15,7 @@ const AddBook = () => {
             author: data.authorName,
             price: data.price
         };
-
+        //adding book/books list in database
         const url = `https://young-citadel-38075.herokuapp.com/addBook`;
         fetch(url, {
             method: 'POST',
@@ -23,7 +24,6 @@ const AddBook = () => {
             },
             body: JSON.stringify(booksData)
         })
-            .then(res => console.log(res))
     };
 
     const handleUploadImage = event => {
@@ -38,23 +38,29 @@ const AddBook = () => {
     }
 
     return (
-        <div className="addBooks-div">
-            <h3>Add Book</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <h6>Book Name</h6>
-                <input className="input-space" name="name" defaultValue="adding book name" ref={register} />
-                <br />
-                <h6 >Author Name</h6>
-                <input className="input-space" name="authorName" defaultValue="author name" ref={register} />
-                <br />
-                <h6>Add Price</h6>
-                <input className="input-space" name="price" defaultValue="price" ref={register} />
-                <br />
-                <h6>Add Book Cover Photo</h6>
-                <input className="input-space" type="file" name="exampleRequired" onChange={handleUploadImage} />
-                <br />
-                <input className="input-space" type="submit" />
-            </form>
+        <div>
+            <div className="admin-div">
+                <Link to="/addBook">  <button className="btn-success admin-manage-btn">Add Book</button></Link>
+                <Link to="/manageBook">  <button className="btn-success admin-manage-btn" >Manage Book</button></Link>
+            </div>
+            <div className="addBooks-div">
+                <p className="add-book">Add Book</p>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <h6>Book Name</h6>
+                    <input className="input-space" name="name" defaultValue="adding book name" ref={register} />
+                    <br />
+                    <h6 >Author Name</h6>
+                    <input className="input-space" name="authorName" defaultValue="author name" ref={register} />
+                    <br />
+                    <h6>Add Price</h6>
+                    <input className="input-space" name="price" defaultValue="price" ref={register} />
+                    <br />
+                    <h6>Add Book Cover Photo</h6>
+                    <input className="input-space" type="file" name="exampleRequired" onChange={handleUploadImage} />
+                    <br />
+                    <input className="submit-button" type="submit" />
+                </form>
+            </div >
         </div>
     );
 };

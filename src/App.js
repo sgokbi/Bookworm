@@ -7,11 +7,12 @@ import {
 import Header from './components/Header/Header';
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-import AddBooks from './components/AddBook/AddBook';
+import AddBook from './components/AddBook/AddBook';
 import { createContext, useState } from 'react';
 import Order from './components/Order/Order';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 import CheckOut from './components/CheckOut/CheckOut';
+import ManageBook from "./components/ManageBook/ManageBook";
 
 export const UserContext = createContext();
 
@@ -33,13 +34,19 @@ function App() {
             <CheckOut />
           </PrivetRoute>
           <PrivetRoute path="/admin">
-            <AddBooks />
+            <AddBook />
           </PrivetRoute>
           <PrivetRoute path="/orders">
             <Order />
           </PrivetRoute>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/addBook">
+            <AddBook />
+          </Route>
+          <Route path="/manageBook">
+            <ManageBook />
           </Route>
         </Switch>
       </Router>

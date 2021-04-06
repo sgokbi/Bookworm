@@ -1,0 +1,20 @@
+.ordered-list-container{
+    background-color:  rgb(31, 116, 138);;
+    text-align: left;
+    margin: 50px 240px 30px;
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+}
+.ordered-list-div{
+    border: 1px solid gray;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.ordered-heading{
+    margin-bottom: 30px;
+}
+.ordered-list-design{
+    color: rgb(94, 9, 94);
+}

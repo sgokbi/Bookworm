@@ -12,8 +12,6 @@ if (!firebase.apps.length) {
 }
 
 const Login = () => {
-
-    const [user, setUser] = useState({});
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
@@ -25,10 +23,9 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                const user = result.user;
-                console.log(user)
-                setUser(user);
-                setLoggedInUser(user)
+                const { displayName, email } = result.user;
+                const signedInUser = { displayName, email }
+                setLoggedInUser(signedInUser)
                 history.replace(from);
             }).catch((error) => {
                 const email = error.email;

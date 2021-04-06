@@ -1,13 +1,13 @@
 .books-image{
     height: 270px;
-    width: 250px;
+    width: 230px;
     border-radius: 10px;
 }
 .single-book-box{
-background-color: rgb(241, 235, 235);
-text-align: center;
-padding: 20px;
-border-radius: 10px;
+    background-color: rgb(245, 235, 235);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
 }
 .button{
     height: 40px;

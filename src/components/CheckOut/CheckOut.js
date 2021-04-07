@@ -1,7 +1,6 @@
 import { checkUtils } from '@material-ui/pickers/_shared/hooks/useUtils';
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import "./Checkout.css";
 

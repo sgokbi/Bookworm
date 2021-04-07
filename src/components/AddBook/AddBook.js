@@ -44,7 +44,7 @@ const AddBook = () => {
                 <Link to="/manageBook">  <button className="btn-success admin-manage-btn" >Manage Book</button></Link>
             </div>
             <div className="addBooks-div">
-                <p className="add-book">Add Book</p>
+                <p className="add-book-heading">Add Book</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h6>Book Name</h6>
                     <input className="input-space" name="name" defaultValue="adding book name" ref={register} />

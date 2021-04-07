@@ -1,7 +1,8 @@
 import React from 'react';
+import "./DeleteManage.css";
 
 const DeleteManage = (props) => {
-    const { _id, name } = props.book
+    const { _id, name, author, price } = props.book
 
     const handleDelete = id => {
         //deleting book/books api 
@@ -15,7 +16,9 @@ const DeleteManage = (props) => {
 
     return (
         <div className="manage-book-list">
-            <p>  Name: {name}</p>
+            <p> Name: {name} <span className="focus"> By</span>  {author}  </p>
+            <p> Price: {price}</p>
+
             <button className="btn-success" onClick={() => handleDelete(_id)}>Delete</button>
         </div>
     );

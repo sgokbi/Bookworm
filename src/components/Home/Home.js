@@ -15,6 +15,12 @@ const Home = () => {
     return (
         <div className="home-container">
             <h1>Buy books and Enhance Your Knowledge</h1>
+            {
+                books.length === 0 &&
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            }
             <div className="row p-2">
                 {
                     books.map(book => <Books book={book}></Books>)
